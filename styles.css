@@ -118,7 +118,7 @@ h2 {
 /* ВСЕ фото в карточках — ОДИНАКОВЫЕ и МЕНЬШЕ */
 .projects-grid .card img {
   width: 100%;
-  height: 130px;
+  height: 30px;
     /* если всё ещё крупно — поставь 110px или 100px */
   object-fit: cover;
   /* ровно кадрирует */
