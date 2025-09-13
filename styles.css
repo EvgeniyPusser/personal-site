@@ -123,17 +123,14 @@ h2 {
   object-fit: cover;
   /* ровно кадрирует */
   border-radius: 6px;
-  display: block
+  /* Remove stray display: block and closing brace */
+    /* Подстраховка от огромных исходников */
   }
-  
-  /* Подстраховка от огромных исходников */
-    /* Одинаковый размер только для фото из папки houses */
-    img[src^="houses/"] {
-      width: 200px;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-      border-radius: 6px;
-  
-
-    
+/* Одинаковый размер только для фото из папки houses */
+img[src^="houses/"] {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
