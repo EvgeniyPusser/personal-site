@@ -32,7 +32,7 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 20px auto;
       padding: 20px;
       background: #fff;
@@ -41,8 +41,10 @@
     }
 
     h2 {
+      border-bottom: 2px solid #2c3e50;
       color: #2c3e50;
       margin-top: 0;
+      padding-bottom: 6px;
     }
 
     .donate {
@@ -64,6 +66,41 @@
       background: #2ecc71;
     }
 
+    /* ===== Projects grid ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 700px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 8px 0 6px;
+      color: #2c3e50;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      margin: 8px 0;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -83,7 +120,6 @@
   <main>
     <h2>About Me</h2>
     <img src="foto.jpg" alt="Evgenii Bogomazov-Pusser" style="max-width:200px; border-radius:50%; margin-top:20px;">
-
     <p>I am 66 years old, father of 9 children and grandfather of 7 grandchildren.
       My journey includes studying drama directing, psychology, music,
       building houses as a real estate developer in St. Petersburg, and
@@ -111,11 +147,46 @@
         <button>Support on FundRazr</button>
       </a>
     </div>
+<!-- ===== Projects Section ===== -->
+<h2>My Projects</h2>
+<div id="projects" class="projects-grid"></div>
   </main>
 
   <footer>
     <p>📧 evgeniipusser88@gmail.com | 🌍 Rehovot, Israel</p>
   </footer>
+<!-- Inline script to render project cards -->
+<script>
+  const projects = [
+    {
+      title: "Residential Building — St. Petersburg (Historic Center)",
+      img: "houses/house1.jpg",
+      desc: "Multi-story residential complex delivered as a developer: land rights obtained, approvals secured, construction completed."
+    },
+    {
+      title: "Urban Development Project",
+      img: "houses/house2.jpg",
+      desc: "End-to-end real estate development: master plan work, cooperation with architects, and city planning authorities."
+    },
+    {
+      title: "Legislative Impact in Housing",
+      img: "houses/house3.jpg",
+      desc: "Contributed to amendments (Urban Planning Code, Art. 51) enabling reconstruction of multi-apartment buildings without relocation."
+    }
+  ];
+
+  const container = document.getElementById("projects");
+  projects.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+        <h3>${p.title}</h3>
+        <img src="${p.img}" alt="${p.title}" loading="lazy">
+        <p>${p.desc}</p>
+      `;
+    container.appendChild(card);
+  });
+</script>
 </body>
 
 </html>
