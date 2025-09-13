@@ -14,11 +14,6 @@ header {
   background: #2c3e50;
   color: #fff;
   text-align: center;
-img[src^="houses/"] {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-  }
   padding: 40px 20px
 }
 
@@ -132,9 +127,12 @@ h2 {
   }
   
   /* Подстраховка от огромных исходников */
-img {
-  width: 200px;
+    /* Одинаковый размер только для фото из папки houses */
+    img[src^="houses/"] {
+      width: 200px;
     height: 150px;
     object-fit: cover;
-}
+    display: block;
+      border-radius: 6px;
+  
 
