@@ -1,123 +1,134 @@
-/* Базовая типографика и фон */
+/* База */
+* {
+  box-sizing: border-box
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
   background: #f9f9f9;
   color: #333;
+  line-height: 1.6
 }
 
-/* Шапка */
 header {
   background: #2c3e50;
   color: #fff;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2.2em
 }
 
 header p {
-  font-size: 1.1em;
+  font-size: 1.1em
 }
 
-/* Контентный блок */
 main {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 20px auto;
   padding: 20px;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .1)
 }
 
-/* Заголовки */
 h2 {
+  margin: 0 0 8px;
   border-bottom: 2px solid #2c3e50;
   color: #2c3e50;
-  margin-top: 0;
-  padding-bottom: 6px;
+  padding-bottom: 6px
+  }
+  
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #2c3e50;
+    color: #fff;
+    margin-top: 20px
+  }
+  
+  /* Портрет (верхнее фото) — компактно */
+  main>img[alt="Evgenii Bogomazov-Pusser"] {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 16px 0 10px
 }
 
-/* Кнопки доната */
+/* Донат-кнопки */
 .donate {
   text-align: center;
-  margin: 30px 0;
+  margin: 24px 0
 }
 
 .donate button {
   background: #27ae60;
   color: #fff;
   border: none;
-  padding: 14px 28px;
-  font-size: 1.1em;
+  padding: 12px 24px;
+    font-size: 1em;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 6px
 }
 
 .donate button:hover {
-  background: #2ecc71;
+  background: #2ecc71
 }
 
-/* Подвал */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #2c3e50;
-  color: #fff;
-  margin-top: 20px;
-}
-
-/* ===== СЕТКА ПРОЕКТОВ ===== */
+/* ===== ПРОЕКТЫ ===== */
 .projects-grid {
   display: grid;
+  gap: 14px;
+    margin: 14px auto 0;
+    max-width: 900px;
   grid-template-columns: 1fr;
-  /* по одному в столбик на мобильных */
-  gap: 16px;
-  margin-top: 16px;
+  /* мобилки */
 }
 
-/* 2 колонки на средних экранах */
-@media (min-width: 700px) {
+@media (min-width:600px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr)
   }
 }
 
-/* 3 колонки на широких */
-@media (min-width: 1000px) {
+@media (min-width:900px) {
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr)
   }
 }
 
-/* Карточка проекта */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 14px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-  background: #fff;
+  padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
+    background: #fff
 }
 
 .card h3 {
-  margin: 8px 0 6px;
-  color: #2c3e50;
+  margin: 6px 0 6px;
+    color: #2c3e50
 }
 
-/* ЕДИНЫЙ размер фото ТОЛЬКО в блоке проектов
-   (портрет в блоке About Me не трогаем) */
+/* ВСЕ фото в карточках — ОДИНАКОВЫЕ и МЕНЬШЕ */
 .projects-grid .card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  /* одинаковая пропорция */
+  height: 130px;
+    /* если всё ещё крупно — поставь 110px или 100px */
   object-fit: cover;
-  /* ровно заполняет кадр, обрезая края */
+  /* ровно кадрирует */
   border-radius: 6px;
-  display: block;
+  display: block
+  }
+  
+  /* Подстраховка от огромных исходников */
+  img {
+    max-width: 100%;
+    height: auto
 }
 
