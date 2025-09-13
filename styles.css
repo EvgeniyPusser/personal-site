@@ -120,31 +120,4 @@ footer {
   border-radius: 6px;
   display: block;
 }
-/* портрет сверху — делаем компактным (без правок HTML) */
-main>img[alt="Evgenii Bogomazov-Pusser"] {
-  width: 140px;
-  /* было визуально больше */
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin-top: 20px;
-}
 
-/* сетка проектов — делаем карточки уже, чтобы фото стали меньше */
-.projects-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-}
-
-/* все фото в проектах — один размер превью и поменьше */
-.projects-grid .card img {
-  width: 100%;
-  height: 160px;
-  /* уменьшите на 140/150 при желании */
-  object-fit: cover;
-  /* обрезает края, чтобы было ровно */
-  border-radius: 6px;
-  display: block;
-}
